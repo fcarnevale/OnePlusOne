@@ -1,0 +1,38 @@
+@mixin manage-button {
+  cursor: pointer;
+  display: inline-block;
+  float: left;
+  height: 100px;
+  width: 100px;
+  color: inherit;
+  padding: 4px 0 0 4px;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+#dashboard-controls {
+  display: block;
+  width: auto;
+  height: 200px;
+  margin: 0 auto;
+
+  color: #fff;
+  font-family: "Helvetica Neue", "Helvetica", sans-serif;
+  font-size: 24px;
+  font-weight: 100;
+  letter-spacing: 0px;
+
+  &>a#manage-people {
+    @include manage-button;
+    margin-right: 20px;
+    background-color: #b0aeff;
+  }
+
+  &>a#manage-teams {
+    @include manage-button;
+    background-color: #00a9ff;
+  }
+
+}
