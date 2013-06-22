@@ -1,3 +1,9 @@
-// Place all the styles related to the People controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#people {
+  margin: 30px 0;
+  p {
+    font-family: "Helvetica Neue", "Helvetica", sans-serif;
+    font-weight: 200;
+    font-size: 20px;
+    margin: 10px 0 0 8px;
+  }
+}
