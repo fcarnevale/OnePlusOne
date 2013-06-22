@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  # Add auth check for dashboard
+  before_filter :signed_in_user, only: [:dashboard]
 
   def home
   end
