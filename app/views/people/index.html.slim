@@ -2,6 +2,6 @@ h1 people
 
 = link_to "add person", new_person_path, class: "btn btn-primary"
 
-ul#people
-- @people.each do |person|
-  li person
+#people
+  - @people.each do |person|
+    p #{person.name}
