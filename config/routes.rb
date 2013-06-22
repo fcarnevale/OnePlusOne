@@ -1,7 +1,7 @@
 OnePlusOne::Application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   
-  match '/signin',  to: "sessions#new"
+  match '/signin',  to: "sessions#new", as: "signin"
   match '/signout', to: "sessions#destroy", via: :delete
 
   get '/dashboard', to: "pages#dashboard", as: "dashboard"
