@@ -14,7 +14,7 @@ class PeopleController < ApplicationController
     @person = Person.new(params[:person].permit(:name, :email))
 
     if @person.save
-      flash[:success] = "Person created!"
+      flash[:success] = "person created!"
       redirect_to people_url
     else
       render 'new'
