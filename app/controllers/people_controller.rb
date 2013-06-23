@@ -21,6 +21,11 @@ class PeopleController < ApplicationController
     end
   end
 
+  def destroy
+    @person.destroy
+    redirect_to people_url
+  end
+
   private
 
     def set_user
