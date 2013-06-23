@@ -49,7 +49,7 @@ class PeopleController < ApplicationController
     end
 
     def person_params
-      params[:person].permit(:name, :email)
+      params[:person].permit(:name, :email, :team_ids => [])
     end
 
 end
