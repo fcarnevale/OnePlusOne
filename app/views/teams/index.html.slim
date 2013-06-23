@@ -1,0 +1,11 @@
+h1 teams
+
+= link_to "add team", new_team_path, class: "btn btn-primary"
+
+#teams
+  - @teams.each do |team|
+    p #{team.name} 
+    p.edit-destroy-links
+      = link_to "edit", edit_team_path(team)
+      = link_to "destroy", team_path(team), :method => :delete, :data => { :confirm => 'Are you sure you want to delete this team?' }
+    .clearfix

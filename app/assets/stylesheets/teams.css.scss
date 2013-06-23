@@ -1,0 +1,21 @@
+#teams {
+  margin: 30px 0;
+  p {
+    font-family: "Helvetica Neue", "Helvetica", sans-serif;
+    font-weight: 200;
+    font-size: 20px;
+    display: inline-block;
+    float: left;
+    min-width: 100px;
+    margin: 10px 0 0 8px;
+  
+    &.edit-destroy-links {
+      a {
+        display: inline-block;
+        float: left;
+        font-size: 12px;
+        padding-left: 8px;        
+      }
+    }
+  }
+}
