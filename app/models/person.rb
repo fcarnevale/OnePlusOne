@@ -11,6 +11,9 @@
 
 class Person < ActiveRecord::Base
 
+  has_many :mamberships
+  has_many :teams, through: :memberships
+
   before_save { self.email.downcase! }
 
   validates :name,  presence: true, length: { maximum: 50 }
