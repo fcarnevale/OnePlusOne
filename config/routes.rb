@@ -1,5 +1,6 @@
 OnePlusOne::Application.routes.draw do
   resources :people
+  resources :teams
   resources :sessions, only: [:new, :create, :destroy]
   
   match '/signin',  to: "sessions#new", as: "signin"
