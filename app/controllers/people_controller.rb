@@ -1,5 +1,6 @@
 class PeopleController < ApplicationController
   before_filter :signed_in_user
+  before_filter :set_user, only: [:edit, :update, :destroy]
 
   def index
     @people = Person.all.sort_by(&:name)
@@ -19,5 +20,11 @@ class PeopleController < ApplicationController
       render 'new'
     end
   end
+
+  private
+
+    def set_user
+      @person = Person.find(params[:id])  
+    end
 
 end
