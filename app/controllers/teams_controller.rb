@@ -1,6 +1,9 @@
 class TeamsController < ApplicationController
   before_filter :signed_in_user
-  before_filter :set_team, only: [:edit, :update, :destroy]
+  before_filter :set_team, only: [:show, :edit, :update, :destroy]
+
+  def show
+  end
 
   def index
     @teams = Team.all.sort_by(&:name)
