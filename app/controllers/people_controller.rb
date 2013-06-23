@@ -1,6 +1,6 @@
 class PeopleController < ApplicationController
   before_filter :signed_in_user
-  before_filter :set_user, only: [:edit, :update, :destroy]
+  before_filter :set_person, only: [:edit, :update, :destroy]
 
   def index
     @people = Person.all.sort_by(&:name)
@@ -41,7 +41,7 @@ class PeopleController < ApplicationController
 
   private
 
-    def set_user
+    def set_person
       @person = Person.find(params[:id])  
     end
 
