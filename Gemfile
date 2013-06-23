@@ -21,6 +21,7 @@ gem 'strong_parameters', '~> 0.2.1'
 gem 'uglifier', '>= 1.0.3'
 
 gem 'jquery-rails', '~> 3.0.1'
+gem 'chosen-rails', '~> 0.9.15'
 
 group :development, :test do
   gem "rspec-rails", "~> 2.10.1"
