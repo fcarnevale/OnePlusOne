@@ -11,7 +11,7 @@ class PeopleController < ApplicationController
   end
 
   def create
-    @person = Person.new(params[:person].permit(:name, :email))
+    @person = Person.new(person_params)
 
     if @person.save
       flash[:success] = "person created!"
@@ -30,6 +30,10 @@ class PeopleController < ApplicationController
 
     def set_user
       @person = Person.find(params[:id])  
+    end
+
+    def person_params
+      params[:person].permit(:name, :email)
     end
 
 end
