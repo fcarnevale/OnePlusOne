@@ -11,7 +11,7 @@ h1.center edit team
 
       .field
         = f.label :person_ids, "team members"
-        = f.collection_select :person_ids, Person.order(:name), :id, :name, {}, { multiple: true, :data => { :placeholder => 'please select your team members' } }
+        = f.collection_select :person_ids, Person.order(:name), :id, :name, {}, { multiple: true, :data => { :placeholder => 'please select team member(s)' } }
 
       .clearfix
       
