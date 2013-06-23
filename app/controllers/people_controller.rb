@@ -21,6 +21,19 @@ class PeopleController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    @person.update_attributes(person_params)
+    if @person.save
+      flash[:success] = "person updated!"
+      redirect_to people_url
+    else
+      render 'edit'
+    end
+  end
+
   def destroy
     @person.destroy
     redirect_to people_url
