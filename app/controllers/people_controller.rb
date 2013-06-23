@@ -1,6 +1,9 @@
 class PeopleController < ApplicationController
   before_filter :signed_in_user
-  before_filter :set_person, only: [:edit, :update, :destroy]
+  before_filter :set_person, only: [:show, :edit, :update, :destroy]
+
+  def show
+  end
 
   def index
     @people = Person.all.sort_by(&:name)
