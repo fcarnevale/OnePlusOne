@@ -3,7 +3,7 @@ class TeamsController < ApplicationController
   before_filter :set_team, only: [:edit, :update, :destroy]
 
   def index
-    @teams = Person.all.sort_by(&:name)
+    @teams = Team.all.sort_by(&:name)
   end
 
   def new
