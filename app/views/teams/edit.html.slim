@@ -4,9 +4,14 @@ h1.center edit team
   #signin-form.span6.offset3
     = form_for @team do |f|
       = render "shared/error_messages", object: f.object
-      
-      = f.label :name
-      = f.text_field :name
+
+      .field      
+        = f.label :name, "name"
+        = f.text_field :name
+
+      .field
+        = f.label :person_ids, "team members"
+        = f.collection_select :person_ids, Person.order(:name), :id, :name, {}, { multiple: true, :data => { :placeholder => 'please select your team members' } }
 
       .clearfix
       
