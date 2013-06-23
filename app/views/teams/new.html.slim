@@ -1,0 +1,13 @@
+h1.center add a team
+
+.row
+  #signin-form.span6.offset3
+    = form_for @team do |f|
+      = render "shared/error_messages", object: f.object
+      
+      = f.label :name
+      = f.text_field :name
+
+      .clearfix
+      
+      = f.submit "create team", class: "btn btn-large btn-primary"
