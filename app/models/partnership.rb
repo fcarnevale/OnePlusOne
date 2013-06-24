@@ -1,15 +1,15 @@
 # == Schema Information
 #
-# Table name: memberships
+# Table name: partnerships
 #
 #  id         :integer          not null, primary key
 #  person_id  :integer
-#  team_id    :integer
+#  partner_id :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
-class Membership < ActiveRecord::Base
-  belongs_to :person
-  belongs_to :team
+class Partnership < ActiveRecord::Base
+  belongs_to :person,  class_name: "Person"
+  belongs_to :partner, class_name: "Person"
 end

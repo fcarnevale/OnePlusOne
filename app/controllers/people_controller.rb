@@ -28,7 +28,7 @@ class PeopleController < ApplicationController
   end
 
   def update
-    @person.update_attributes(person_params)
+    @person.assign_attributes(person_params)
     if @person.save
       flash[:success] = "person updated!"
       redirect_to people_url

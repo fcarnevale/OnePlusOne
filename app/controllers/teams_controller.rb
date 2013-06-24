@@ -28,7 +28,7 @@ class TeamsController < ApplicationController
   end
 
   def update
-    @team.update_attributes(team_params)
+    @team.assign_attributes(team_params)
     if @team.save
       flash[:success] = "team updated!"
       redirect_to teams_url

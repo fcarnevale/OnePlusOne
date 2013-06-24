@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130623010618) do
+ActiveRecord::Schema.define(:version => 20130624073250) do
 
   create_table "memberships", :force => true do |t|
     t.integer  "person_id"
@@ -20,11 +20,29 @@ ActiveRecord::Schema.define(:version => 20130623010618) do
     t.datetime "updated_at", :null => false
   end
 
+  add_index "memberships", ["person_id", "team_id"], :name => "index_memberships_on_person_id_and_team_id", :unique => true
+  add_index "memberships", ["person_id"], :name => "index_memberships_on_person_id"
+  add_index "memberships", ["team_id"], :name => "index_memberships_on_team_id"
+
+  create_table "partnerships", :force => true do |t|
+    t.integer  "person_id"
+    t.integer  "partner_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "partnerships", ["partner_id"], :name => "index_partnerships_on_partner_id"
+  add_index "partnerships", ["person_id", "partner_id"], :name => "index_partnerships_on_person_id_and_partner_id"
+  add_index "partnerships", ["person_id"], :name => "index_partnerships_on_person_id"
+
   create_table "people", :force => true do |t|
     t.string   "name"
     t.string   "email"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                                  :null => false
+    t.datetime "updated_at",                                  :null => false
+    t.integer  "teams_count",              :default => 0
+    t.boolean  "paired",                   :default => false
+    t.integer  "potential_partners_count", :default => 0
   end
 
   add_index "people", ["email"], :name => "index_people_on_email", :unique => true
