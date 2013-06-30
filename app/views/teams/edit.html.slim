@@ -1,18 +1,21 @@
-h1.center edit team
+- provide(:title, "edit team")
 
-.row
-  #signin-form.span6.offset3
-    = form_for @team do |f|
-      = render "shared/error_messages", object: f.object
+.container
+  h1.center edit team
 
-      .field      
-        = f.label :name, "name"
-        = f.text_field :name
+  .row
+    #signin-form.span6.offset3
+      = form_for @team do |f|
+        = render "shared/error_messages", object: f.object
 
-      .field
-        = f.label :person_ids, "team members"
-        = f.collection_select :person_ids, Person.order(:name), :id, :name, {}, { multiple: true, :data => { :placeholder => 'please select team member(s)' } }
+        .field      
+          = f.label :name, "name"
+          = f.text_field :name
 
-      .clearfix
-      
-      = f.submit "update team", class: "btn btn-large btn-primary"
+        .field
+          = f.label :person_ids, "team members"
+          = f.collection_select :person_ids, Person.order(:name), :id, :name, {}, { multiple: true, :data => { :placeholder => 'please select team member(s)' } }
+
+        .clearfix
+        
+        = f.submit "update team", class: "btn btn-large btn-primary"
