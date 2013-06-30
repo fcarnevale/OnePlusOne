@@ -100,6 +100,15 @@ class Person < ActiveRecord::Base
     return most_recent_partnership.person_id unless most_recent_partnership.person_id == self.id
   end
 
+  def self.last_on_never_partnered_list?(id)
+    # No longer implemented anywhere, but keep in the event that more people are added to the app
+    self.all.each do |person|
+      return true if person.never_partnered_with.count == 1 && person.never_partnered_with.include?(id)      
+    end
+    
+    return false
+  end
+
   def current_partner
     current_partnership = Partnership.current.recent.where("(partner_id = ? OR person_id = ?)", self.id, self.id).limit(1).first
     if current_partnership
