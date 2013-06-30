@@ -94,4 +94,10 @@ class Person < ActiveRecord::Base
     end
   end
 
+  def most_recent_partner
+    most_recent_partnership = Partnership.where("(partner_id = ? OR person_id = ?)", self.id, self.id).recent.limit(1).first
+    return most_recent_partnership.partner_id unless most_recent_partnership.partner_id == self.id
+    return most_recent_partnership.person_id unless most_recent_partnership.person_id == self.id
+  end
+
 end
