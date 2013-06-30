@@ -1,7 +1,6 @@
 - provide(:title, 'dashboard')
 
-h1 dashboard
-
-#dashboard-controls
-  = link_to "manage people", people_path, id: "manage-people"
-  = link_to "manage teams", "#", id: "manage-teams"
+.container
+  #dashboard-controls
+    = link_to "manage people", people_path, id: "manage-people"
+    = link_to "manage teams", teams_path, id: "manage-teams"
