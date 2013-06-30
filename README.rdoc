@@ -7,6 +7,10 @@ The following contains:
 
 == Instructions
 
+Go to http://oneplusone.herokuapp.com, and login with the credentials that I emailed to you.
+
+OR
+
 1. Clone the repository to your system
 
 2. Run <tt>bundle</tt> to install the app's gems and their dependencies
@@ -20,10 +24,6 @@ The following contains:
 6. Run <tt>rails s</tt> to start the server, and then login and begin adding teams/people
 
 (Details about the weekly pairing emails are in the "Design Decisions" section below)
-
-OR
-
-Just go to http://oneplusone.herokuapp.com, and login with the credentials I emailed to you.
 
 == Design Decisions
 
