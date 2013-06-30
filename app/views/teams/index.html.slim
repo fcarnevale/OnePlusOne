@@ -1,12 +1,15 @@
-h1 teams
+- provide(:title, 'teams')
 
-= link_to "add team", new_team_path, class: "btn btn-primary"
+.container
+  h1 teams
 
-#teams
-  - @teams.each do |team|
-    p 
-      = link_to "#{team.name}", team_path(team)
-    p.edit-destroy-links
-      = link_to "edit", edit_team_path(team)
-      = link_to "destroy", team_path(team), :method => :delete, :data => { :confirm => 'Are you sure you want to delete this team?' }
-    .clearfix
+  = link_to "add team", new_team_path, class: "btn btn-primary"
+
+  #teams
+    - @teams.each do |team|
+      p 
+        = link_to "#{team.name}", team_path(team)
+      p.edit-destroy-links
+        = link_to "edit", edit_team_path(team)
+        = link_to "destroy", team_path(team), :method => :delete, :data => { :confirm => 'Are you sure you want to delete this team?' }
+      .clearfix

@@ -1,12 +1,15 @@
-h1 people
+- provide(:title, 'people')
 
-= link_to "add person", new_person_path, class: "btn btn-primary"
+.container
+  h1 people
 
-#people
-  - @people.each do |person|
-    p 
-      = link_to "#{person.name}", person_path(person) 
-    p.edit-destroy-links
-      = link_to "edit", edit_person_path(person)
-      = link_to "destroy", person_path(person), :method => :delete, :data => { :confirm => 'Are you sure you want to delete this person?' }
-    .clearfix
+  = link_to "add person", new_person_path, class: "btn btn-primary"
+
+  #people
+    - @people.each do |person|
+      p 
+        = link_to "#{person.name}", person_path(person) 
+      p.edit-destroy-links
+        = link_to "edit", edit_person_path(person)
+        = link_to "destroy", person_path(person), :method => :delete, :data => { :confirm => 'Are you sure you want to delete this person?' }
+      .clearfix
