@@ -8,10 +8,10 @@
       = form_for @person do |f|
         = render "shared/error_messages", object: f.object
         
-        = f.label :name
+        = f.label :name, "name"
         = f.text_field :name
 
-        = f.label :email
+        = f.label :email, "email"
         = f.text_field :email
 
         = f.label :team_ids, "teams"
