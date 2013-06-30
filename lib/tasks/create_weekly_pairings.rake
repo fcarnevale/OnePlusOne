@@ -33,23 +33,23 @@ task :create_weekly_pairings => :environment do
   already_partnered = []
 
   people.each do |p|
-    puts "on #{p.name}. already_partnered is: #{already_partnered}"
-    puts ""
+    # puts "on #{p.name}. already_partnered is: #{already_partnered}"
+    # puts ""
     unless already_partnered.include?(p.id)
       puts "finding a partner for #{p.name}..."
       puts ""
 
       never_partnered_with = p.never_partnered_with
-      puts "never_partnered_with for #{p.name}:"
-      puts "#{never_partnered_with}"
-      puts ""
+      # puts "never_partnered_with for #{p.name}:"
+      # puts "#{never_partnered_with}"
+      # puts ""
 
       never_partnered_with.each do |person_id|
-        puts "already_partnered.include?(#{person_id}): #{already_partnered.include?(person_id)}"
-        puts "already_partnered.include?(#{p.id}): #{already_partnered.include?(p.id)}"
+        # puts "already_partnered.include?(#{person_id}): #{already_partnered.include?(person_id)}"
+        # puts "already_partnered.include?(#{p.id}): #{already_partnered.include?(p.id)}"
         unless already_partnered.include?(person_id)
-          puts "in the never_partnered_with unless block"
-          puts ""
+          # puts "in the never_partnered_with unless block"
+          # puts ""
           Partnership.create(partner_id: p.id, person_id: person_id, current: true)
           already_partnered << p.id
           already_partnered << person_id
@@ -68,8 +68,8 @@ task :create_weekly_pairings => :environment do
 
       least_recent_partners.each do |person_id|
         unless already_partnered.include?(person_id) || p.most_recent_partner == person_id
-          puts "in the least_recent_partners unless block"
-          puts ""
+          # puts "in the least_recent_partners unless block"
+          # puts ""
           Partnership.create(partner_id: p.id, person_id: person_id, current: true)
           already_partnered << p.id
           already_partnered << person_id
