@@ -44,19 +44,18 @@ class Person < ActiveRecord::Base
   end
 
   def potential_partners
-    my_teams = self.teams
-    my_potential_partners = []
+    potential_partners_ids = []
 
     self.class.all.each do |p|
-      unless (p.id == self.id) || (p.paired == true) 
-        overlap = my_teams & p.teams
+      unless (p.id == self.id) 
+        overlap = self.teams & p.teams
         if overlap.length > 0
-          my_potential_partners << p
+          potential_partners_ids << p.id
         end
       end
     end
 
-    my_potential_partners
+    return potential_partners_ids
   end
 
 end
