@@ -11,8 +11,9 @@ h1.center add a person
       = f.label :email
       = f.text_field :email
 
-      = f.label :team_ids, "teams"
-      = f.collection_select :team_ids, Team.order(:name), :id, :name, {}, { multiple: true, :data => { :placeholder => 'please select team(s)' } }
+      - if Team.all.count > 0
+        = f.label :team_ids, "teams"
+        = f.collection_select :team_ids, Team.order(:name), :id, :name, {}, { multiple: true, :data => { :placeholder => 'please select team(s)' } }
 
       .clearfix
       
