@@ -1,19 +1,22 @@
-h1.center add a team
+- provide(:title, "add a team")
 
-.row
-  #signin-form.span6.offset3
-    = form_for @team do |f|
-      = render "shared/error_messages", object: f.object
-      
-      .field
-        = f.label :name, "name"
-        = f.text_field :name
+.container
+  h1.center add a team
 
-      - if Person.all.count > 0  
+  .row
+    #signin-form.span6.offset3
+      = form_for @team do |f|
+        = render "shared/error_messages", object: f.object
+        
         .field
-          = f.label :person_ids, "team members"
-          = f.collection_select :person_ids, Person.order(:name), :id, :name, {}, { multiple: true, :data => { :placeholder => 'please select team member(s)' } }
+          = f.label :name, "name"
+          = f.text_field :name
 
-      .clearfix
-      
-      = f.submit "create team", class: "btn btn-large btn-primary"
+        - if Person.all.count > 0  
+          .field
+            = f.label :person_ids, "team members"
+            = f.collection_select :person_ids, Person.order(:name), :id, :name, {}, { multiple: true, :data => { :placeholder => 'please select team member(s)' } }
+
+        .clearfix
+        
+        = f.submit "create team", class: "btn btn-large btn-primary add-person-or-team"
