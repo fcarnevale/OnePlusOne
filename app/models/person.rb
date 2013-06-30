@@ -36,7 +36,11 @@ class Person < ActiveRecord::Base
   end
 
   def all_partners
-    self.partners + self.reverse_partners
+    partners_ids = self.partners.map { |p| p.id }
+    reverse_partners_ids = self.reverse_partners.map { |p| p.id }
+    all_partners_ids = partners_ids + reverse_partners_ids
+    all_partners_ids.uniq!
+    return all_partners_ids
   end
 
   def potential_partners
