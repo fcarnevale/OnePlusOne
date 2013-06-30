@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130624073250) do
+ActiveRecord::Schema.define(:version => 20130630004624) do
 
   create_table "memberships", :force => true do |t|
     t.integer  "person_id"
@@ -27,8 +27,9 @@ ActiveRecord::Schema.define(:version => 20130624073250) do
   create_table "partnerships", :force => true do |t|
     t.integer  "person_id"
     t.integer  "partner_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+    t.boolean  "current",    :default => false
   end
 
   add_index "partnerships", ["partner_id"], :name => "index_partnerships_on_partner_id"
