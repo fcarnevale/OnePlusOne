@@ -9,13 +9,15 @@ The following contains:
 
 1. Clone the repository to your system
 
-2. Startup postgresql on your system, and create a local db
+2. Run <tt>bundle</tt> to install the app's gems and their dependencies
 
-3. Run <tt>rake db:schema:load</tt> to load the db schema
+3. Startup postgresql on your system, and create a local db
 
-4. Run <tt>rails console</tt>, and create yourself a user (requires a name, email, password, and password_confirmation)
+4. Run <tt>rake db:schema:load</tt> to load the db schema
 
-5. Run <tt>rails s</tt> to start the server, and then login and begin adding teams/people
+5. Run <tt>rails console</tt>, and create yourself a user (requires a name, email, password, and password_confirmation)
+
+6. Run <tt>rails s</tt> to start the server, and then login and begin adding teams/people
 
 (Details about the weekly pairing emails are in the "Design Decisions" section below)
 
