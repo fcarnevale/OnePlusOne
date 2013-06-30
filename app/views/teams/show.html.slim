@@ -1,11 +1,14 @@
-h1 = @team.name
-= link_to "edit team", edit_team_path(@team)
+- provide(:title, "#{@team.name}")
 
-hr
+.container
+  h1 = @team.name
+  = link_to "edit team", edit_team_path(@team)
 
-- if @team.people.length > 0
-  h4 members:
-  - @team.people.sort_by(&:name).each do |person|
-    p = person.name
-- else
-  h4 currently no team members
+  hr
+
+  - if @team.people.length > 0
+    h4 members:
+    - @team.people.sort_by(&:name).each do |person|
+      p = person.name
+  - else
+    h4 currently no team members

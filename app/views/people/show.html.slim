@@ -1,12 +1,15 @@
-h1 = @person.name
-h4 = @person.email
-= link_to "edit profile", edit_person_path(@person)
+- provide(:title, "#{@person.name}")
 
-hr
+.container
+  h1 = @person.name
+  h4 = @person.email
+  = link_to "edit profile", edit_person_path(@person)
 
-- if @person.teams.length > 0
-  h4 member of:
-  - @person.teams.sort_by(&:name).each do |team|
-    p = team.name
-- else
-  h4 not currently on any teams
+  hr
+
+  - if @person.teams.length > 0
+    h4 member of:
+    - @person.teams.sort_by(&:name).each do |team|
+      p = team.name
+  - else
+    h4 not currently on any teams
