@@ -16,7 +16,8 @@
       
       - person_one = Person.find(p.partner_id)
       - person_two = Person.find(p.person_id)
-      h4.partnership #{person_one.teams.include?(team_one) && person_two.teams.include?(team_one) ? "Team 1" : "Team 2"}
+      h4.partnership 
+        = (person_one.teams.include?(team_one) && person_two.teams.include?(team_one)) ? "Team 1" : "Team 2"
       p.partnership 
         = person_one.name
       p.partnership
