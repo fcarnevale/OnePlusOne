@@ -1,17 +1,17 @@
 - provide(:title, 'sign in')
 
-h1.center Sign in
+h1.center sign in
 
 .row
   #signin-form.span6.offset3
     = form_for(:session, url: sessions_path) do |f|
 
-      = f.label :email
+      = f.label :email, "email"
       = f.text_field :email
 
-      = f.label :password
+      = f.label :password, "password"
       = f.password_field :password
 
       .clearfix
       
-      = f.submit "Sign in", class: "btn btn-large btn-primary"
+      = f.submit "sign in", class: "btn btn-large btn-primary"
