@@ -75,6 +75,8 @@ I ran the rake tasks a number of times to confirm that partners were allocated c
 
 == Other Notes
 
+My apologies for having some rather large commits in the project. I don't usually like doing blanket "WIP" commits, and prefer committing in small bits as I go along. My git best practices took a temporary back seat while I hustled to try to get pairing functionality to work.
+
 Thank you for the opportunity to complete this project for you, and for IFTTT! I look forward to hearing back about potential next steps.
 
 Best,
