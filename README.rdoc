@@ -19,7 +19,7 @@ The following will have:
 
 OR
 
-Just go to http://oneplusone.herokuapp.com, and login with the credentials I emailed to you
+Just go to http://oneplusone.herokuapp.com, and login with the credentials I emailed to you.
 
 == Design Decisions
 
@@ -29,7 +29,9 @@ The basic functionality of the app was straightforward to implement (add people,
 
 More thought had to be put into modeling the pairing relationship between people on teams.
 
-I ended up using a has_many through relationship between people and a partnership model. Each person has many partners through the partnerships model. The partnerships table consists mainly of a partner id and a person id.
+I ended up using a has many through relationship between people and a partnership model. I chose that for its flexibility, and ultimately ended up adding another column to the partnerships table...so I'm glad I went that route.
+
+Each person has many partners through the partnerships model. The partnerships table consists mainly of a partner id and a person id.
 
 That was the model that was at the core of making the weekly pairings work properly.
 
@@ -51,7 +53,7 @@ I would've liked to use TDD. However, as I'm still quite new to TDD, I didn't wa
 
 So, I did a lot of manual testing. A lot of clearing the db data, reseeding it with new data, rerunning rake tasks, and so on.
 
-If you navigate to /partnerships on the Heroku site (while you're signed in), you'll see the view that I used to confirm that the weekly pairings were adhering to the rules set out in the gist.
+If you navigate to http://oneplusone.herokuapp.com/partnerships on the Heroku site (while you're signed in), you'll see the view that I used to confirm that the weekly pairings were adhering to the rules set out in the gist.
 
 I originally was working with a bunch more teams, and a bunch more people, but ended up just using the basic data from the gist.
 
@@ -70,4 +72,5 @@ I ran the rake tasks a number of times to confirm that partners were allocated c
 Thank you for the opportunity to complete this project for you, and for IFTTT! I look forward to hearing back about potential next steps.
 
 Best,
+
 Frank
