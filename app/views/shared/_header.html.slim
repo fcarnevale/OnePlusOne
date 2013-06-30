@@ -1,0 +1,15 @@
+header.navbar.navbar-inverse
+  div.navbar-inner
+    div.container
+      - if current_user
+        = link_to "1+1", dashboard_path, id: "header-logo"
+      - else
+        = link_to "1+1", root_path, id: "header-logo"      
+      nav
+        ul.nav.pull-right  
+          - if current_user
+            li = link_to 'people', people_path
+            li = link_to 'teams', teams_path
+            li = link_to 'sign out', signout_path, method: "delete"
+          - else
+            = link_to 'log in', signin_path, class: "btn btn-primary"

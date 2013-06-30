@@ -1,0 +1,14 @@
+.container {
+  padding: 8px;
+}
+
+a#header-logo {
+  font-size: 28px;
+  margin-top: 10px;
+  display: inline-block;
+  float: left;
+  color: #fff;
+  &:hover {
+    text-decoration: none;
+  }
+}
