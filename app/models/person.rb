@@ -100,4 +100,13 @@ class Person < ActiveRecord::Base
     return most_recent_partnership.person_id unless most_recent_partnership.person_id == self.id
   end
 
+  def current_partner
+    current_partnership = Partnership.current.recent.where("(partner_id = ? OR person_id = ?)", self.id, self.id).limit(1).first
+    if current_partnership
+      return self.class.find(current_partnership.partner_id) unless current_partnership.partner_id == self.id
+      return self.class.find(current_partnership.person_id) unless current_partnership.person_id == self.id
+    end
+    return ""
+  end
+
 end
