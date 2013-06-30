@@ -1,20 +1,23 @@
-h1.center add a person
+- provide(:title, "add a person")
 
-.row
-  #signin-form.span6.offset3
-    = form_for @person do |f|
-      = render "shared/error_messages", object: f.object
-      
-      = f.label :name
-      = f.text_field :name
+.container
+  h1.center add a person
 
-      = f.label :email
-      = f.text_field :email
+  .row
+    #signin-form.span6.offset3
+      = form_for @person do |f|
+        = render "shared/error_messages", object: f.object
+        
+        = f.label :name, "name"
+        = f.text_field :name
 
-      - if Team.all.count > 0
-        = f.label :team_ids, "teams"
-        = f.collection_select :team_ids, Team.order(:name), :id, :name, {}, { multiple: true, :data => { :placeholder => 'please select team(s)' } }
+        = f.label :email, "email"
+        = f.text_field :email
 
-      .clearfix
-      
-      = f.submit "create person", class: "btn btn-large btn-primary"
+        - if Team.all.count > 0
+          = f.label :team_ids, "teams"
+          = f.collection_select :team_ids, Team.order(:name), :id, :name, {}, { multiple: true, :data => { :placeholder => 'please select team(s)' } }
+
+        .clearfix
+        
+        = f.submit "create person", class: "btn btn-large btn-primary add-person-or-team"
