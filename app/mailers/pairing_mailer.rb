@@ -3,6 +3,6 @@ class PairingMailer < ActionMailer::Base
 
   def weekly_pairing(person)
     @person = person
-    mail(to: person.email, subject: "Here is your 1+1 pairing for the week!")
+    mail(to: person.email, subject: "Here is your 1+1 pairing for next week!")
   end
 end
