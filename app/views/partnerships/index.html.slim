@@ -1,0 +1,23 @@
+h1 partnerships
+
+#partnerships
+  - i = 0
+  - week = 1
+  - team_one = Team.find_by_name("Team 1")
+  - team_two = Team.find_by_name("Team 2")
+  - @partnerships.each do |p|
+    - if i == 0
+      h2 week 1
+    - elsif i % 4 == 0
+      h2 = "week #{week}"
+    
+    - person_one = Person.find(p.partner_id)
+    - person_two = Person.find(p.person_id)
+    h3 #{person_one.teams.include?(team_one) && person_two.teams.include?(team_one) ? "Team 1" : "Team 2"}
+    p 
+      = person_one.name
+    p
+      = person_two.name
+    - i = i + 1
+    - week = (i/4) + 1
+    .clearfix
