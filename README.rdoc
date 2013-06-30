@@ -43,7 +43,7 @@ Weekly pairings are created in the create_weekly_pairings rake task. My thinking
 
 I then iterated through these people, first checking for folks with whom they had never before partnered.
 
-If they already partnered with everyone that they could possibly partner with, I then iterated through their least recent partners (an array of partner IDs, sorted from least recent partnership to most recent) and double-checked that they hadn't partnered with that person the week prior before creating a new partnership.
+If they already partnered with everyone that they could possibly partner with, I then iterated through their least recent partners (an array of partner IDs, sorted from least recent partnership to most recent), and double-checked that they hadn't partnered with that person the week prior before creating a new partnership.
 
 I originally passed entire person objects around for these processes, but ended up refactoring most of the person model methods to return only person IDs. I did this refactoring as a result of tracking down a bug, and didn't have enough time to think about whether it made sense to change the methods back to returning entire objects. Part of me likes the lightweight nature of returning only IDs. Another part of me likes the flexibility of having an entire object to process/manipulate.
 
