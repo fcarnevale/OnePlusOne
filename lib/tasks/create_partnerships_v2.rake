@@ -78,19 +78,4 @@ task :create_partnerships_v2 => :environment do
     puts "-----"
     puts ""
   end
-
-
-  # algorithm
-  # set paired to false before running
-  # 1. sort people by their number of teams (people with least # of teams first)
-  # 2. start pairing with the person at the top of that list, use array shift to "pop" first person off.
-  #    remove their newly appointed partner as well
-  # 3. retrieve eligible partners (on same team(s))
-  # 4. look for someone they haven't partnered with yet. if that returns no one, 
-  #    look for someone they haven't partnered with for two weeks. use the first record 
-  #    that gets returned. if that returns no one, look for someone they didn't partner 
-  #    with last week. use the first record returned. if that returns no one, give them any 
-  #    person on their team. if that returns no one, they're out of luck.
-  # 5. whenever a match is match, toggle a boolean field on them ()
-
 end
