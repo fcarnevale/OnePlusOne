@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+
+  <p>Hi <%= @person.name %>!</p>
+
+  <p>Your 1+1 pairing for next week will be <%= @person.current_partner.name %>.</p>
+
+  <p>Have a great weekend!</p>
+      
+  <p>Best,</p>
+
+  <p>IFTTT 1+1</p>
+  <a href="<%= root_url %>"><%= root_url %></a>
+  </body>
+</html>
