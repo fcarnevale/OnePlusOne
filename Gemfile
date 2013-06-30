@@ -13,6 +13,7 @@ gem 'sass-rails',   '~> 3.2.3'
 gem 'coffee-rails', '~> 3.2.1'
 gem 'pry', '~> 0.9.12.2'
 gem 'slim', '~> 2.0.0'
+gem 'newrelic_rpm', '~> 3.6.5.130'
 
 gem 'strong_parameters', '~> 0.2.1'
 
