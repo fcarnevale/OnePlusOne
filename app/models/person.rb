@@ -58,4 +58,30 @@ class Person < ActiveRecord::Base
     return potential_partners_ids
   end
 
+  def least_recent_partner
+    return self.least_recent_partners.first
+  end
+
+  def least_recent_partners
+    least_recent_partners = self.least_recent_partnerships.collect do |p|
+      if p.partner_id == self.id
+        p.person_id
+      elsif p.person_id == self.id
+        p.partner_id
+      end
+    end
+    return least_recent_partners
+  end
+
+  def least_recent_partnerships
+    least_recent_partnerships = []
+    self.potential_partners.each do |pp_id|
+      partnership = Partnership.where("(partner_id = ? AND person_id = ?) OR (person_id = ? AND partner_id = ?)", self.id, pp_id, self.id, pp_id).recent.limit(1).first
+      least_recent_partnerships << partnership if partnership
+    end
+
+    least_recent_partnerships.sort_by!(&:created_at)
+    return least_recent_partnerships
+  end
+
 end
