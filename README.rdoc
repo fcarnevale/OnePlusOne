@@ -33,7 +33,7 @@ The basic functionality of the app was straightforward to implement (add people,
 
 More thought had to be put into modeling the pairing relationship between people on teams.
 
-I ended up using a has many through relationship between people and a partnership model. I chose that for its flexibility, and ultimately ended up adding another column to the partnerships table...so I'm glad I went that route.
+I ended up using a has many through relationship between people and a partnership model. I chose that for its flexibility, and as it happens, ultimately ended up adding another column to the partnerships table...so I'm glad I went that route.
 
 Each person has many partners through the partnerships model. The partnerships table consists mainly of a partner id and a person id.
 
