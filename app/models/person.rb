@@ -84,4 +84,14 @@ class Person < ActiveRecord::Base
     return least_recent_partnerships
   end
 
+  def never_partnered_with
+    potential_partners_ids = self.potential_partners
+    if self.all_partners
+      all_partners_ids = self.all_partners
+      return (potential_partners_ids - all_partners_ids)
+    else
+      return potential_partners_ids
+    end
+  end
+
 end
