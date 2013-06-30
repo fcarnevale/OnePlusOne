@@ -17,6 +17,8 @@ The following contains:
 
 5. Run <tt>rails s</tt> to start the server, and then login and begin adding teams/people
 
+(Details about the weekly pairing emails are in the "Design Decisions" section below)
+
 OR
 
 Just go to http://oneplusone.herokuapp.com, and login with the credentials I emailed to you.
