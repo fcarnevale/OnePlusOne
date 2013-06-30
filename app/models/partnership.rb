@@ -12,4 +12,7 @@
 class Partnership < ActiveRecord::Base
   belongs_to :person,  class_name: "Person"
   belongs_to :partner, class_name: "Person"
+
+  scope :recent, :order => 'partnerships.created_at DESC'
+  scope :current, where(current: "true") 
 end
