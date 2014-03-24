@@ -7,10 +7,6 @@ The following contains:
 
 == Instructions
 
-Go to http://oneplusone.herokuapp.com, and login with the credentials that I emailed to you.
-
-OR
-
 1. Clone the repository to your system
 
 2. Run <tt>bundle</tt> to install the app's gems and their dependencies
